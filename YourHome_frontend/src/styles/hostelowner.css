@@ -1,0 +1,336 @@
+/* CSS Variables for consistent theming */
+:root {
+  --clr-primary: #4CAF50;
+  --clr-danger: #f44336;
+  --clr-white: #ffffff;
+  --clr-text: #333333;
+  --clr-text-muted: #666666;
+  --clr-error: #d32f2f;
+  --clr-border: #cccccc;
+  --clr-background: #f8f9fa;
+  --clr-modal-overlay: rgba(0, 0, 0, 0.5);
+  --border-radius: 5px;
+  --border-radius-sm: 4px;
+  --border-radius-lg: 8px;
+  --shadow-sm: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: 0.3s ease;
+}
+
+/* Main container */
+.hostel-owner-page {
+  min-height: 100vh;
+  background-color: var(--clr-background);
+}
+
+.hostel-owner-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header section */
+.hostel-owner-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.hostel-owner-title {
+  color: var(--clr-text);
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.add-hostel-btn {
+  padding: 10px 20px;
+  background-color: var(--clr-primary);
+  color: var(--clr-white);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.add-hostel-btn:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+}
+
+.add-hostel-btn:active {
+  transform: translateY(0);
+}
+
+/* Loading and error states */
+.loading-text {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--clr-text-muted);
+  padding: 20px;
+}
+
+.error-text {
+  text-align: center;
+  color: var(--clr-error);
+  font-size: 1.1rem;
+  padding: 20px;
+  background-color: #ffebee;
+  border-radius: var(--border-radius);
+  margin: 20px 0;
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: var(--clr-white);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+  margin: 20px 0;
+}
+
+.empty-state p {
+  color: var(--clr-text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.empty-state .add-first-hostel-btn {
+  padding: 12px 24px;
+  background-color: var(--clr-primary);
+  color: var(--clr-white);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color var(--transition);
+}
+
+.empty-state .add-first-hostel-btn:hover {
+  background-color: #45a049;
+}
+
+/* Hostel cards grid */
+.hostels-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--clr-modal-overlay);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal content */
+.modal-content {
+  background-color: var(--clr-white);
+  padding: 30px;
+  border-radius: var(--border-radius-lg);
+  width: 90%;
+  max-width: 450px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-title {
+  color: var(--clr-text);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Form styles */
+.hostel-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-label {
+  display: block;
+  color: var(--clr-text);
+  font-weight: 500;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--border-radius-sm);
+  font-size: 14px;
+  color: var(--clr-text);
+  transition: border-color var(--transition), box-shadow var(--transition);
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--clr-primary);
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+.form-input:hover {
+  border-color: #999;
+}
+
+/* Form buttons */
+.form-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.form-submit-btn {
+  flex: 1;
+  padding: 12px 16px;
+  background-color: var(--clr-primary);
+  color: var(--clr-white);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color var(--transition);
+}
+
+.form-submit-btn:hover {
+  background-color: #45a049;
+}
+
+.form-cancel-btn {
+  flex: 1;
+  padding: 12px 16px;
+  background-color: var(--clr-danger);
+  color: var(--clr-white);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color var(--transition);
+}
+
+.form-cancel-btn:hover {
+  background-color: #da190b;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .hostel-owner-container {
+    padding: 15px;
+  }
+
+  .hostel-owner-header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: stretch;
+  }
+
+  .hostel-owner-title {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  .hostels-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .modal-content {
+    padding: 20px;
+    margin: 20px;
+    max-height: 90vh;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .hostel-owner-container {
+    padding: 10px;
+  }
+
+  .modal-content {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  .modal-title {
+    font-size: 1.3rem;
+  }
+}
+
+/* Focus states for accessibility */
+.add-hostel-btn:focus,
+.form-submit-btn:focus,
+.form-cancel-btn:focus,
+.add-first-hostel-btn:focus {
+  outline: 2px solid var(--clr-primary);
+  outline-offset: 2px;
+}
+
+.form-input:focus {
+  outline: none;
+}
+
+/* Utility classes */
+.text-center {
+  text-align: center;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
