@@ -43,7 +43,7 @@ We believe everyone deserves a safe, comfortable place to stay while pursuing th
 1. **Navigate to backend directory**
 cd YourHome_Backend
 
-text
+
 
 2. **Configure database**
 - Create a MySQL database named `yourhome_db`
@@ -52,12 +52,12 @@ spring.datasource.url=jdbc:mysql://localhost:3306/yourhome_db
 spring.datasource.username=your_username
 spring.datasource.password=your_password
 
-text
+
 
 3. **Run the application**
 mvn spring-boot:run
 
-text
+
 
 4. **Backend will start on** `http://localhost:8000`
 
@@ -66,17 +66,17 @@ text
 1. **Navigate to frontend directory**
 cd yourhome-frontend
 
-text
+
 
 2. **Install dependencies**
 npm install
 
-text
+
 
 3. **Start development server**
 npm start
 
-text
+
 
 4. **Frontend will start on** `http://localhost:3000`
 
@@ -124,13 +124,13 @@ DB_USERNAME=your_username
 DB_PASSWORD=your_password
 JWT_SECRET=your_jwt_secret
 
-text
+
 
 ### Frontend (.env)
 REACT_APP_API_URL=http://localhost:8000
 REACT_APP_ENV=development
 
-text
+
 
 ## 🤝 Contributing
 
