@@ -8,31 +8,6 @@ Your Home is built by a group of passionate students who want to make finding gr
 
 We believe everyone deserves a safe, comfortable place to stay while pursuing their dreams away from home.
 
-## 📁 Project Structure
-
-YourHome-Project/
-├── yourhome-frontend/ # React frontend application
-│ ├── src/
-│ │ ├── components/ # Reusable components
-│ │ ├── organisms/ # Page components
-│ │ ├── molecules/ # Complex components
-│ │ ├── atoms/ # Basic components
-│ │ ├── reduxSlices/ # Redux state management
-│ │ └── styles/ # CSS stylesheets
-│ ├── public/
-│ └── package.json
-└── YourHome_Backend/ # Spring Boot backend API
-├── src/main/java/
-│ ├── controller/ # REST controllers
-│ ├── entity/ # JPA entities
-│ ├── repository/ # Data repositories
-│ ├── service/ # Business logic
-│ └── dto/ # Data transfer objects
-├── src/main/resources/
-└── pom.xml
-
-text
-
 ## 🛠️ Technologies Used
 
 ### Frontend
